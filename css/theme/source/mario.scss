@@ -88,8 +88,11 @@ section.has-light-background {
   }
 
   section {
-    li {
-      margin: 1.2em 0;
+    ul {
+      margin: 0 1em;
+      li {
+        margin: 1.2em 0;
+      }
     }
 
     img {
@@ -147,6 +150,15 @@ section.has-light-background {
     justify-content: center;
   }
 
+  .el-grow {
+    flex-grow: 0;
+    flex-basis: 200px;
+  }
+  .el-basis {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 150px;
+  }
   .el-ej1 {
     // flex: 1 0 200px;
   }

@@ -38,8 +38,10 @@ section.has-light-background, section.has-light-background h1, section.has-light
     content: "#DrupalCampEs"; }
   .reveal.mario .twitter_account {
     right: 0.5em; }
-  .reveal.mario section li {
-    margin: 1.2em 0; }
+  .reveal.mario section ul {
+    margin: 0 1em; }
+    .reveal.mario section ul li {
+      margin: 1.2em 0; }
   .reveal.mario section img {
     border: 0;
     background: 0; }
@@ -77,6 +79,13 @@ section.has-light-background, section.has-light-background h1, section.has-light
   .reveal.mario .cont-ej1 {
     display: flex;
     justify-content: center; }
+  .reveal.mario .el-grow {
+    flex-grow: 0;
+    flex-basis: 200px; }
+  .reveal.mario .el-basis {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 150px; }
 
 /*********************************************
  * GLOBAL STYLES
