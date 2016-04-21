@@ -113,6 +113,30 @@
 }
 						</code></pre>
 				</section>
+				<section>
+					<h3>¿Como funciona?</h3>
+					<ul>
+						<li class="">Se define si los elementos se forzarán a estar en una única línea o bien podrán ser envueltos en varias líneas.  </li>
+					</ul>
+						<pre><code class="css" data-trim contenteditable style="font-size: 32px; line-height: 1.5em;">
+.elemento-contenedor {
+  display: flex;
+  flex-wrap: wrap; /* nowrap; por defecto */
+}
+						</code></pre>
+				</section>
+				<section>
+					<h3>¿Como funciona?</h3>
+					<ul>
+						<li class="">Ambas propiedades (direction y wrap), pueden simplificarse usando una sóla.</li>
+					</ul>
+						<pre><code class="css" data-trim contenteditable style="font-size: 32px; line-height: 1.5em;">
+.elemento-contenedor {
+  display: flex;
+  flex-flow: column nowrap;
+}
+						</code></pre>
+				</section>
 
 				<section>
 					<h3>¿Como funciona?</h3>
@@ -143,7 +167,7 @@
 					<h3>¿Como funciona?</h3>
 					<h4>Propiedad elemento flex-grow</h4>
 					<ul>
-						<li class="">Con valor 1 permite que el elemento pase a ocupar el espacio sobrante. </li>
+						<li class="">Con valor 1 permite que el elemento pase a ocupar el espacio sobrante del eje principal. </li>
 					</ul>
 					<div class="contenedor cont-ej1">
 						<div class="elemento el-grow">
@@ -252,6 +276,93 @@ flex-basis: auto;
 <pre><code class="css" data-trim contenteditable style="font-size: 28px; line-height: 1.5em;">
 .elemento {
   flex-basis: 150px;
+}
+</code></pre>
+				</section>
+
+				<section>
+					<h4 class="left">Ejemplo:</h4>
+					<div class="contenedor cont-ej1">
+						<div class="elemento el-ej1">
+							<h2 class="elemento__title">Mario</h2>
+							<p class="elemento__texto">
+								Un fontanero come setas.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-ej1">
+							<h2 class="elemento__title">Luigi</h2>
+							<p class="elemento__texto">
+								El hermano delgado y guapo.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-ej1">
+							<h2 class="elemento__title">Yoshi</h2>
+							<p class="elemento__texto">
+								Dragón sin dientes.<br>
+								Compañero fiel.<br>
+								El auténtico heroe.<br>
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+					</div>
+					<ul>
+						<li class="">O de una simplificada que incluya los tres anteriores:</li>
+					</ul>
+<pre><code class="css" data-trim contenteditable style="font-size: 28px; line-height: 1.5em;">
+.elemento {
+  flex: 1 0 200px; /* grow shrink basis */
+}
+</code></pre>
+				</section>
+				<section>
+					<h4 class="left">Ejemplo flex-wrap:</h4>
+					<div class="contenedor cont-ej1" style="flex-wrap: wrap;">
+						<div class="elemento el-wrap">
+							<h2 class="elemento__title">Mario</h2>
+						</div>
+						<div class="elemento el-wrap">
+							<h2 class="elemento__title">Luigi</h2>
+						</div>
+						<div class="elemento el-wrap">
+							<h2 class="elemento__title">Yoshi</h2>
+						</div>
+					</div>
+					<ul>
+						<li class="">Los elementos se envuelven en varias líneas.</li>
+					</ul>
+<pre><code class="css" data-trim contenteditable style="font-size: 28px; line-height: 1.5em;">
+.contenedor {
+  flex-wrap: wrap;
+}
+.elemento {
+  flex: 1 0 45%; /* grow shrink basis */
+}
+</code></pre>
+				</section>
+				<section>
+					<h4 class="left">Ejemplo flex-wrap:</h4>
+					<div class="contenedor cont-ej1" style="flex-wrap: wrap-reverse;">
+						<div class="elemento el-wrap">
+							<h2 class="elemento__title">Mario</h2>
+						</div>
+						<div class="elemento el-wrap">
+							<h2 class="elemento__title">Luigi</h2>
+						</div>
+						<div class="elemento el-wrap">
+							<h2 class="elemento__title">Yoshi</h2>
+						</div>
+					</div>
+					<ul>
+						<li class="">Los elementos se envuelven en varias líneas.</li>
+					</ul>
+<pre><code class="css" data-trim contenteditable style="font-size: 28px; line-height: 1.5em;">
+.contenedor {
+  flex-wrap: wrap-reverse;
+}
+.elemento {
+  flex: 1 0 45%; /* grow shrink basis */
 }
 </code></pre>
 				</section>
@@ -408,23 +519,27 @@ flex-basis: auto;
 				</section>
 
 				<section>
-					<h4 class="left">Ejemplo:</h4>
-					<div class="contenedor cont-ej1">
-						<div class="elemento el-ej1">
+					<h3>¿Como funciona?</h3>
+					<h4>Alineacion de elementos</h4>
+					<ul>
+						<li class="">Alineación en el eje secundario. </li>
+					</ul>
+					<div class="contenedor cont-ej1" style="align-items: stretch; height:260px;">
+						<div class="elemento el-basis">
 							<h2 class="elemento__title">Mario</h2>
 							<p class="elemento__texto">
 								Un fontanero come setas.
 							</p>
 							<a href="" class="elemento__boton">Fav!</a>
 						</div>
-						<div class="elemento el-ej1">
+						<div class="elemento el-basis">
 							<h2 class="elemento__title">Luigi</h2>
 							<p class="elemento__texto">
 								El hermano delgado y guapo.
 							</p>
 							<a href="" class="elemento__boton">Fav!</a>
 						</div>
-						<div class="elemento el-ej1">
+						<div class="elemento el-basis">
 							<h2 class="elemento__title">Yoshi</h2>
 							<p class="elemento__texto">
 								Dragón sin dientes.<br>
@@ -434,21 +549,495 @@ flex-basis: auto;
 							<a href="" class="elemento__boton">Fav!</a>
 						</div>
 					</div>
-					<ul>
-						<li class="">O de una simplificada que incluya los tres anteriores:</li>
-					</ul>
 <pre><code class="css" data-trim contenteditable style="font-size: 28px; line-height: 1.5em;">
-.elemento {
-  flex: 1 0 200px; /* grow shrink basis */
+.contenedor {
+  align-items: stretch;
 }
 </code></pre>
 				</section>
 
+				<section>
+					<h3>¿Como funciona?</h3>
+					<h4>Alineacion de elementos</h4>
+					<ul>
+						<li class="">Alineación en el eje secundario. </li>
+					</ul>
+					<div class="contenedor cont-ej1" style="align-items: flex-end; height:260px;">
+						<div class="elemento el-basis">
+							<h2 class="elemento__title">Mario</h2>
+							<p class="elemento__texto">
+								Un fontanero come setas.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis">
+							<h2 class="elemento__title">Luigi</h2>
+							<p class="elemento__texto">
+								El hermano delgado y guapo.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis">
+							<h2 class="elemento__title">Yoshi</h2>
+							<p class="elemento__texto">
+								Dragón sin dientes.<br>
+								Compañero fiel.<br>
+								El auténtico heroe.<br>
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+					</div>
+<pre><code class="css" data-trim contenteditable style="font-size: 28px; line-height: 1.5em;">
+.contenedor {
+  align-items: flex-end;
+}
+</code></pre>
+				</section>
 
+				<section>
+					<h3>¿Como funciona?</h3>
+					<h4>Alineacion de elementos</h4>
+					<ul>
+						<li class="">Alineación en el eje secundario. </li>
+					</ul>
+					<div class="contenedor cont-ej1" style="align-items: center; height:260px;">
+						<div class="elemento el-basis">
+							<h2 class="elemento__title">Mario</h2>
+							<p class="elemento__texto">
+								Un fontanero come setas.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis">
+							<h2 class="elemento__title">Luigi</h2>
+							<p class="elemento__texto">
+								El hermano delgado y guapo.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis">
+							<h2 class="elemento__title">Yoshi</h2>
+							<p class="elemento__texto">
+								Dragón sin dientes.<br>
+								Compañero fiel.<br>
+								El auténtico heroe.<br>
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+					</div>
+<pre><code class="css" data-trim contenteditable style="font-size: 28px; line-height: 1.5em;">
+.contenedor {
+  align-items: center;  /* flex-start | baseline */
+}
+</code></pre>
+				</section>
+				<section>
+					<h4>Alineacion de contenido</h4>
+					<ul>
+						<li class="small-font">Alineación en el eje secundario, con más de una línea de contenido. </li>
+					</ul>
+					<div class="contenedor cont-ej1" style="flex-wrap: wrap; align-content: flex-start; align-items: center; height:370px;">
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Mario</h2>
+							<p class="elemento__texto">
+								Un fontanero come setas.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Luigi</h2>
+							<p class="elemento__texto">
+								El hermano delgado y guapo.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Yoshi</h2>
+							<p class="elemento__texto">
+								Dragón sin dientes.<br>
+								Compañero fiel.<br>
+								El auténtico heroe.<br>
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Princesa</h2>
+							<p class="elemento__texto">
+								Pink power.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Hongo malo</h2>
+							<p class="elemento__texto">
+								Un mal viaje.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Estrella</h2>
+							<p class="elemento__texto">
+								Subidón.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+					</div>
+<pre><code class="css" data-trim contenteditable style="font-size: 24px; line-height: 1.5em;">
+.contenedor {
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+</code></pre>
+				</section>
+				<section>
+					<h4>Alineacion de contenido</h4>
+					<ul>
+						<li class="small-font">Alineación en el eje secundario, con más de una línea de contenido. </li>
+					</ul>
+					<div class="contenedor cont-ej1" style="flex-wrap: wrap; align-content: flex-end; align-items: center; height:370px;">
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Mario</h2>
+							<p class="elemento__texto">
+								Un fontanero come setas.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Luigi</h2>
+							<p class="elemento__texto">
+								El hermano delgado y guapo.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Yoshi</h2>
+							<p class="elemento__texto">
+								Dragón sin dientes.<br>
+								Compañero fiel.<br>
+								El auténtico heroe.<br>
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Princesa</h2>
+							<p class="elemento__texto">
+								Pink power.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Hongo malo</h2>
+							<p class="elemento__texto">
+								Un mal viaje.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Estrella</h2>
+							<p class="elemento__texto">
+								Subidón.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+					</div>
+<pre><code class="css" data-trim contenteditable style="font-size: 24px; line-height: 1.5em;">
+.contenedor {
+  flex-wrap: wrap;
+  align-content: flex-end;
+}
+</code></pre>
+				</section>
+				<section>
+					<h4>Alineacion de contenido</h4>
+					<ul>
+						<li class="small-font">Alineación en el eje secundario, con más de una línea de contenido. </li>
+					</ul>
+					<div class="contenedor cont-ej1" style="flex-wrap: wrap; align-content: space-between; align-items: center; height:370px;">
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Mario</h2>
+							<p class="elemento__texto">
+								Un fontanero come setas.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Luigi</h2>
+							<p class="elemento__texto">
+								El hermano delgado y guapo.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Yoshi</h2>
+							<p class="elemento__texto">
+								Dragón sin dientes.<br>
+								Compañero fiel.<br>
+								El auténtico heroe.<br>
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Princesa</h2>
+							<p class="elemento__texto">
+								Pink power.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Hongo malo</h2>
+							<p class="elemento__texto">
+								Un mal viaje.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Estrella</h2>
+							<p class="elemento__texto">
+								Subidón.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+					</div>
+<pre><code class="css" data-trim contenteditable style="font-size: 24px; line-height: 1.5em;">
+.contenedor {
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+</code></pre>
+				</section>
+				<section>
+					<h4>Alineacion de contenido</h4>
+					<ul>
+						<li class="small-font">Alineación en el eje secundario, con más de una línea de contenido. </li>
+					</ul>
+					<div class="contenedor cont-ej1" style="flex-wrap: wrap; align-content: space-around; align-items: center; height:370px;">
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Mario</h2>
+							<p class="elemento__texto">
+								Un fontanero come setas.
+							</p>
+						</div>
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Luigi</h2>
+							<p class="elemento__texto">
+								El hermano delgado y guapo.
+							</p>
+						</div>
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Yoshi</h2>
+							<p class="elemento__texto">
+								Dragón sin dientes.<br>
+							</p>
+						</div>
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Princesa</h2>
+							<p class="elemento__texto">
+								Pink power.
+							</p>
+						</div>
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Hongo malo</h2>
+							<p class="elemento__texto">
+								Un mal viaje.
+							</p>
+						</div>
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Estrella</h2>
+							<p class="elemento__texto">
+								Subidón.
+							</p>
+						</div>
+					</div>
+<pre><code class="css" data-trim contenteditable style="font-size: 24px; line-height: 1.5em;">
+.contenedor {
+  flex-wrap: wrap;
+  align-content: space-around; /* stretch por defecto */
+}
+</code></pre>
+				</section>
+				<section>
+					<h3>¿Como funciona?</h3>
+					<h4>Cambiar el orden de los elementos</h4>
+					<ul>
+						<li class="small-font">Podemos cambiar el orden de cada elemento individualmente.</li>
+					</ul>
+					<div class="contenedor cont-ej1" style="flex-wrap: wrap;">
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Mario</h2>
+							<p class="elemento__texto">
+								Un fontanero come setas.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Luigi</h2>
+							<p class="elemento__texto">
+								El hermano delgado y guapo.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis alto-fijo" style="order: 1;">
+							<h2 class="elemento__title">Yoshi, último</h2>
+							<p class="elemento__texto">
+								Dragón sin dientes.<br>
+								Compañero fiel.<br>
+								El auténtico heroe.<br>
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Princesa</h2>
+							<p class="elemento__texto">
+								Pink power.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis alto-fijo" style="order: -1;">
+							<h2 class="elemento__title">Hongo malo, el primero!</h2>
+							<p class="elemento__texto">
+								Un mal viaje.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis alto-fijo">
+							<h2 class="elemento__title">Estrella</h2>
+							<p class="elemento__texto">
+								Subidón.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+					</div>
+<pre><code class="css" data-trim contenteditable style="font-size: 24px; line-height: 1.5em;">
+.hongo-malo {
+  order: -1;
+}
+.yoshi {
+  order: 1; /* 0 por defecto */
+}
+</code></pre>
+				</section>
+				<section>
+					<h3>¿Como funciona?</h3>
+					<ul>
+						<li class="small-font">Cambiar la alineación individual de un elemento en el eje secundario. </li>
+					</ul>
+					<div class="contenedor cont-ej1" style="align-items: flex-end; height:360px;">
+						<div class="elemento el-basis" style="align-self: flex-start;">
+							<h2 class="elemento__title">Mario arriba!</h2>
+							<p class="elemento__texto">
+								Un fontanero come setas.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis">
+							<h2 class="elemento__title">Luigi</h2>
+							<p class="elemento__texto">
+								El hermano delgado y guapo.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis">
+							<h2 class="elemento__title">Yoshi</h2>
+							<p class="elemento__texto">
+								Dragón sin dientes.<br>
+								Compañero fiel.<br>
+								El auténtico heroe.<br>
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+					</div>
+<pre><code class="css" data-trim contenteditable style="font-size: 28px; line-height: 1.5em;">
+.mario {
+  align-self: flex-start;
+}
+</code></pre>
+				</section>
+				<section>
+					<h3>¿Como funciona?</h3>
+					<ul>
+						<li>Flexbox nos permite alinear elementos dentro del contenedor de manera sencilla</li>
+					</ul>
+					<div class="contenedor cont-ej1" style="align-items: flex-end; height:300px; width: 400px;">
+						<div class="elemento el-basis" style="margin: auto">
+							<h2 class="elemento__title">Mario centrado</h2>
+						</div>
+					</div>
+<pre><code class="css" data-trim contenteditable style="font-size: 28px; line-height: 1.5em;">
+.mario {
+  margin: auto;
+}
+</code></pre>
+				</section>
+				<section>
+					<h4>Alineacion individual de elementos</h4>
+					<ul>
+						<li class="small-font">Podemos cambiar la alineación de un elemento individualmente.</li>
+					</ul>
+					<div class="contenedor cont-ej1" style="justify-content: flex-start;">
+						<div class="elemento el-basis">
+							<h2 class="elemento__title">Mario</h2>
+							<p class="elemento__texto">
+								Un fontanero come setas.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis">
+							<h2 class="elemento__title">Luigi</h2>
+							<p class="elemento__texto">
+								El hermano delgado y guapo.
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+						<div class="elemento el-basis"   style="margin-left: auto;">
+							<h2 class="elemento__title">Yoshi</h2>
+							<p class="elemento__texto">
+								Dragón sin dientes.<br>
+								Compañero fiel.<br>
+								El auténtico heroe.<br>
+							</p>
+							<a href="" class="elemento__boton">Fav!</a>
+						</div>
+					</div>
+<pre><code class="css" data-trim contenteditable style="font-size: 28px; line-height: 1.5em;">
+.yoshi {
+  margin-left: auto;
+}
+</code></pre>
 
-      	<section>
-      		<h2>Gracias!</h2>
-      		<h1>That's all folks</h1>
+				</section>
+				<section data-state="sunny">
+					<h4>Alineacion individual de elementos</h4>
+					<ul>
+						<li class="small-font">Podemos cambiar la alineación de un elemento individualmente.</li>
+					</ul>
+					<div class="contenedor cont-ej1" style="flex-direction: column; height: 400px;">
+						<div class="elemento vertical-align">
+							<h2 class="elemento__title">Mario</h2>
+						</div>
+						<div class="elemento vertical-align">
+							<h2 class="elemento__title">Luigi</h2>
+						</div>
+						<div class="elemento vertical-align" style="margin-top: auto;">
+							<h2 class="elemento__title">Yoshi</h2>
+						</div>
+					</div>
+<pre><code class="css" data-trim contenteditable style="font-size: 28px; line-height: 1.5em;">
+.yoshi {
+  margin-top: auto;
+}
+</code></pre>
+
+				</section>
+				<section data-state="dungeons">
+				<h1>Pero...</h1>
+				</section>
+				<section data-state="inside-dungeons">
+					<h2>Compatibilidad con navegadores</h2>
+					<h3><a href="http://caniuse.com/#search=flex">Check</a></h3>
+					<img src="img/caniuse.png" class="can-i-use">
+				</section>
+      	<section data-state="end">
+      		<h2>That's all folks</h2>
       		<h3>¿Preguntas?</h3>
       		<p><i class="fa fa-envelope-o"></i>
 pako@ymbra.com<br>
@@ -461,6 +1050,7 @@ pako@ymbra.com<br>
 
 		</div>
 
+		<script src="lib/js/jquery-1.12.3.min.js"></script>
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 
@@ -488,6 +1078,20 @@ pako@ymbra.com<br>
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/notes/notes.js', async: true }
 				]
+			});
+
+			Reveal.addEventListener('dungeons', function() {
+				Reveal.configure({
+					parallaxBackgroundImage: 'img/bg04.png',
+					parallaxBackgroundSize: '17567px 768px'
+				});
+			});
+
+			Reveal.addEventListener('sunny', function() {
+				Reveal.configure({
+					parallaxBackgroundImage: 'img/bg01.png',
+					parallaxBackgroundSize: '9037px 768px'
+				});
 			});
 
 		</script>
