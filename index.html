@@ -41,21 +41,23 @@
 			<span class="twitter_account">@pakmanlh</span>
 
 			<div class="slides">
-				<section class="portada">
+				<section class="portada" data-state="portada">
 					<h1>Mi amigo Flexbox</h1>
 					<h3>Drupalcamp Spain 2016</h3>
 					<p>
-						<small>Pako Garcia
+						<small class="name">Pako Garcia
 						<a href="http://twitter.com/pakmanlh">@pakmanlh</a></small><br>
-						<img src="img/logo-bgdark.png" class="logo-portada">
+						<img src="img/logo-bglight.png" class="logo-portada">
 					</p>
 				</section>
 
 				<section>
 					<h2>¿Quien soy?</h2>
 					<ul>
+						<li>Pako Garcia</li>
 						<li>Drupal Front-end developer</li>
-						<li><img src="img/logo-bgdark.png" class="logo-about-me"></li>
+						<li>Miembro de <img src="img/logo-bgdark.png" class="logo-about-me">
+						</li>
 						<li>Vegan</li>
 						<li><span class="japanese">日本語の学生</span></li>
 					</ul>
@@ -77,6 +79,7 @@
 						<li class="">Adaptar los elementos de dentro de un contenedor dependiendo de su contenido.</li>
 						<li class="">Reordenar y cambiar la alineación de los elementos (tanto vertical como horizontal).</li>
 						<li class="">Crear grids o layouts fácilmente adaptables. Sin floats ni widths.</li>
+						<li class="">Liberarnos de los muros a la hora de imaginar / crear componentes.</li>
 					</ul>
 				</section>
 
@@ -91,7 +94,7 @@
 						<li class="">Se necesita un elemento contenedor.</li>
 						<li class="">Con un nuevo valor propiedad CSS3:</li>
 					</ul>
-						<pre><code class="css" data-trim contenteditable style="font-size: 28px; line-height: 1.5em;">
+						<pre><code class="css" data-trim contenteditable style="font-size: 32px; line-height: 1.5em;">
 .elemento-contenedor {
   display: flex; /* inline-flex;*/
 }
@@ -103,7 +106,7 @@
 						<li class="">Se define el eje principal en el que se dispondrán los elementos contenidos.</li>
 						<li>Por defecto es horizontal (row), pero puede ser vertical (column).</li>
 					</ul>
-						<pre><code class="css" data-trim contenteditable style="font-size: 28px; line-height: 1.5em;">
+						<pre><code class="css" data-trim contenteditable style="font-size: 32px; line-height: 1.5em;">
 .elemento-contenedor {
   display: flex;
   flex-direction: column; /* row; por defecto */
@@ -116,7 +119,7 @@
 					<ul>
 						<li class="">Los elementos que incluya el contenedor disponen de otras propiedades CSS3</li>
 					</ul>
-<pre><code class="css" data-trim contenteditable style="font-size: 28px; line-height: 1.5em;">
+<pre><code class="css" data-trim contenteditable style="font-size: 32px; line-height: 1.5em;">
 .elemento {
   flex-grow: 1; /* 0 por defecto */
   flex-shrink: 0; /* 1 por defecto */
@@ -127,7 +130,8 @@
 				<section>
 					<h3>¿Como funciona?</h3>
 					<ul>
-						<li class="">O de una simplificada que incluya los tres anteriores:</li>
+						<li class="">O en lugar de tres propiedades, una única propiedad simplificada que incluya las tres anteriores:</li>
+						<li class="">Mismo paradigma que font: (font-size, font-family, font- ... )</li>
 					</ul>
 <pre><code class="css" data-trim contenteditable style="font-size: 28px; line-height: 1.5em;">
 .elemento {
@@ -139,7 +143,7 @@
 					<h3>¿Como funciona?</h3>
 					<h4>Propiedad elemento flex-grow</h4>
 					<ul>
-						<li class="">Con valor 1 permite que el elemento ocupe pase a ocupar el espacio restante. </li>
+						<li class="">Con valor 1 permite que el elemento pase a ocupar el espacio sobrante. </li>
 					</ul>
 					<div class="contenedor cont-ej1">
 						<div class="elemento el-grow">
@@ -245,6 +249,11 @@ flex-basis: auto;
 							<a href="" class="elemento__boton">Fav!</a>
 						</div>
 					</div>
+<pre><code class="css" data-trim contenteditable style="font-size: 28px; line-height: 1.5em;">
+.elemento {
+  flex-basis: 150px;
+}
+</code></pre>
 				</section>
 
 				<section>
@@ -277,7 +286,7 @@ flex-basis: auto;
 							<a href="" class="elemento__boton">Fav!</a>
 						</div>
 					</div>
-<pre><code class="css" data-trim contenteditable style="font-size: 22px; line-height: 1.5em;">
+<pre><code class="css" data-trim contenteditable style="font-size: 28px; line-height: 1.5em;">
 .contenedor {
   justify-content: flex-end; /* flex-start; por defecto */
 }
@@ -315,7 +324,7 @@ flex-basis: auto;
 							<a href="" class="elemento__boton">Fav!</a>
 						</div>
 					</div>
-<pre><code class="css" data-trim contenteditable style="font-size: 22px; line-height: 1.5em;">
+<pre><code class="css" data-trim contenteditable style="font-size: 28px; line-height: 1.5em;">
 .contenedor {
   justify-content: center; /* centrados */
 }
@@ -327,7 +336,6 @@ flex-basis: auto;
 					<h4>Alineacion de elementos</h4>
 					<ul>
 						<li class="">Alineación en el eje principal. </li>
-						<li class="">justify-content: space-between </li>
 					</ul>
 					<div class="contenedor cont-ej1" style="justify-content: space-between;">
 						<div class="elemento el-basis">
@@ -354,6 +362,11 @@ flex-basis: auto;
 							<a href="" class="elemento__boton">Fav!</a>
 						</div>
 					</div>
+<pre><code class="css" data-trim contenteditable style="font-size: 28px; line-height: 1.5em;">
+.contenedor {
+  justify-content: space-between; /* distribuyendo espacios */
+}
+</code></pre>
 				</section>
 
 				<section>
@@ -361,7 +374,6 @@ flex-basis: auto;
 					<h4>Alineacion de elementos</h4>
 					<ul>
 						<li class="">Alineación en el eje principal. </li>
-						<li class="">justify-content: space-between </li>
 					</ul>
 					<div class="contenedor cont-ej1" style="justify-content: space-around;">
 						<div class="elemento el-basis">
@@ -388,6 +400,11 @@ flex-basis: auto;
 							<a href="" class="elemento__boton">Fav!</a>
 						</div>
 					</div>
+<pre><code class="css" data-trim contenteditable style="font-size: 28px; line-height: 1.5em;">
+.contenedor {
+  justify-content: space-around; /* distribuyendo espacios */
+}
+</code></pre>
 				</section>
 
 				<section>
@@ -453,7 +470,7 @@ pako@ymbra.com<br>
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				parallaxBackgroundImage: 'img/bg01.png',
-				parallaxBackgroundSize: '10120px 860px',
+				parallaxBackgroundSize: '9037px 768px',
 				parallaxBackgroundVertical: 0,
 				controls: false,
 				progress: false,

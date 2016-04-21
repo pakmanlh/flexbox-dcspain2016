@@ -13,17 +13,27 @@ section.has-light-background, section.has-light-background h1, section.has-light
 
 .reveal.mario {
   /* Ejemplo 1 */ }
+  .reveal.mario em.rotate {
+    transform: rotate(180deg);
+    font-style: normal; }
   .reveal.mario .slides {
     background: rgba(30, 70, 30, 0.95); }
   .reveal.mario h1 {
     color: #8aff00; }
+  .portada .reveal.mario .slides {
+    background: none; }
   .reveal.mario .portada h1 {
-    color: #f80000; }
+    color: #f80000;
+    text-shadow: 3px 3px 3px #880000; }
+  .reveal.mario .portada .name {
+    text-shadow: 0px 0px 3px #484888; }
   .reveal.mario .logo-portada {
-    margin: -1em 0 0 0;
+    background: rgba(255, 255, 255, 0.9);
+    margin: 0;
     width: 30%;
     box-shadow: none; }
   .reveal.mario .logo-about-me {
+    margin: -1em -0.5em;
     width: 40%;
     box-shadow: none;
     vertical-align: middle; }
@@ -32,7 +42,8 @@ section.has-light-background, section.has-light-background h1, section.has-light
     z-index: 10;
     font-size: 0.6em;
     position: absolute;
-    bottom: 0.5em; }
+    top: 0.5em;
+    text-shadow: 0px 0px 3px #484888; }
   .reveal.mario .hashtag {
     left: 0.5em;
     content: "#DrupalCampEs"; }
@@ -86,6 +97,8 @@ section.has-light-background, section.has-light-background h1, section.has-light
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: 150px; }
+  .reveal.mario .el-ej1 {
+    flex: 1 0 200px; }
 
 /*********************************************
  * GLOBAL STYLES
@@ -136,10 +149,10 @@ body {
   font-size: 2.5em; }
 
 .reveal h3 {
-  font-size: 1.3em; }
+  font-size: 1.8em; }
 
 .reveal h4 {
-  font-size: 1em; }
+  font-size: 1.3em; }
 
 .reveal h1 {
   text-shadow: none; }
