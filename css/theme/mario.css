@@ -116,11 +116,17 @@ section.has-light-background, section.has-light-background h1, section.has-light
   color: #f600ff;
   background: rgba(0, 0, 0, 0.6); }
 
-.inside-dungeons .reveal.mario h2 {
+.inside-dungeons .reveal.mario h4, .inside-dungeons .reveal.mario h3, .inside-dungeons .reveal.mario h2 {
   color: #f600ff; }
 
 .inside-dungeons .reveal.mario .slides {
   background: rgba(90, 90, 90, 0.75); }
+
+.inside-dungeons .reveal.mario a {
+  color: #00f800; }
+
+.modernizr {
+  width: 400px; }
 
 .can-i-use {
   width: 100%; }

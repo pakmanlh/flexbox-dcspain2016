@@ -1010,7 +1010,7 @@ flex-basis: auto;
 					<ul>
 						<li class="small-font">Podemos cambiar la alineación de un elemento individualmente.</li>
 					</ul>
-					<div class="contenedor cont-ej1" style="flex-direction: column; height: 400px;">
+					<div class="contenedor cont-ej1" style="align-items: center; flex-direction: column; height: 400px;">
 						<div class="elemento vertical-align">
 							<h2 class="elemento__title">Mario</h2>
 						</div>
@@ -1036,31 +1036,66 @@ flex-basis: auto;
 					<h3><a href="http://caniuse.com/#search=flex">Check</a></h3>
 					<img src="img/caniuse.png" class="can-i-use">
 				</section>
-				<section>
-					<h3>Ayuda manejar Flexbox</h3>
+				<section data-state="inside-dungeons">
+					<h3>mitigar esta situacion</h3>
 					<h2><a href="https://github.com/postcss/autoprefixer">Autoprefix</a></h2>
 					<ul>
-						<li>Automatizar prefijos</li>
+						<li>Automatizar la escritura de prefijos</li>
 						<li>plugin PostCSS</li>
 					</ul>
 				</section>
-				<section>
+				<section data-state="inside-dungeons">
+					<h3>Ayuda manejar Flexbox</h3>
+					<h2><a href="https://github.com/postcss/autoprefixer">Autoprefix</a></h2>
+					<ul>
+						<li>Configuración de soporte a navegadores mediante <a href="https://github.com/ai/browserslist">browserslist</a>.</li>
+						<li>Sentencias que extraen navegadores desde la web <em>Can I use</em></li>
+					</ul>
+<pre><code class="javascript" data-trim contenteditable style="font-size: 28px; line-height: 1.5em;">
+options.autoprefixer = {
+  browsers: ['> 1%', 'ie 8']
+};
+</code></pre>
+				</section>
+				<section data-state="inside-dungeons">
 					<h3>Ayuda manejar Flexbox</h3>
 					<h2><a href="https://github.com/postcss/autoprefixer">Autoprefix</a></h2>
 					<ul>
 						<li>Tarea de gulp.</li>
-						<li>Configuración de navegadores mediante <a href="https://github.com/ai/browserslist">browserslist</a>.</li>
 					</ul>
-<pre><code class="javascript" data-trim contenteditable style="font-size: 24px; line-height: 1.5em;">
-options.autoprefixer = {
-  browsers: ['> 1%', 'ie 8']
-};
-
+<pre><code class="javascript" data-trim contenteditable style="font-size: 28px; line-height: 1.5em;">
 gulp.task('styles:production', ['clean:css'], function() {
 return gulp.src(options.sassFiles)
   .pipe($.autoprefixer(options.autoprefixer));
 });
 </code></pre>
+				</section>
+				<section data-state="inside-dungeons">
+					<h3>Resultado</h3>
+					<h2><a href="https://github.com/postcss/autoprefixer">Autoprefix</a></h2>
+<pre><code class="css" data-trim contenteditable style="font-size: 28px; line-height: 1.5em;">
+a {
+  display: flex;
+}
+
+a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex
+}
+</code></pre>
+				</section>
+				<section data-state="inside-dungeons">
+					<h3>Afrontar compatibilidad Navegadores no fancy</h3>
+					<p><a href="https://modernizr.com/"><img src="img/modernizr.png" class="modernizr"></a></p>
+					<ul>
+						<li>Integrado en Drupal 8</li>
+					</ul>
+				</section>
+				<section data-state="inside-dungeons">
+					<h3>Modernizr</h3>
+					<p><img src="img/flex-screenshot.png" style="width:100%;"></p>
 				</section>
 
       	<section data-state="end">
