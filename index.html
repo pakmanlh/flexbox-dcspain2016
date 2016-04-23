@@ -443,8 +443,7 @@ flex-basis: auto;
 				</section>
 
 				<section>
-					<h3>¿Como funciona?</h3>
-					<h4>Alineacion de elementos</h4>
+					<h3>Alineacion de elementos</h3>
 					<ul>
 						<li class="">Alineación en el eje principal. </li>
 					</ul>
@@ -481,8 +480,7 @@ flex-basis: auto;
 				</section>
 
 				<section>
-					<h3>¿Como funciona?</h3>
-					<h4>Alineacion de elementos</h4>
+					<h3>Alineacion de elementos</h3>
 					<ul>
 						<li class="">Alineación en el eje principal. </li>
 					</ul>
@@ -1049,11 +1047,11 @@ flex-basis: auto;
 					<h2><a href="https://github.com/postcss/autoprefixer">Autoprefix</a></h2>
 					<ul>
 						<li>Configuración de soporte a navegadores mediante <a href="https://github.com/ai/browserslist">browserslist</a>.</li>
-						<li>Sentencias que extraen navegadores desde la web <em>Can I use</em></li>
+						<li>Selecciona a qué navegadores queremos dar soporte desde la web <em>Can I use</em> mediante ciertos valores «verbales»</li>
 					</ul>
 <pre><code class="javascript" data-trim contenteditable style="font-size: 28px; line-height: 1.5em;">
 options.autoprefixer = {
-  browsers: ['> 1%', 'ie 8']
+  browsers: ['> 1%', 'ie 8', 'last 2 versions']
 };
 </code></pre>
 				</section>
@@ -1090,15 +1088,64 @@ a {
 					<h3>Afrontar compatibilidad Navegadores no fancy</h3>
 					<p><a href="https://modernizr.com/"><img src="img/modernizr.png" class="modernizr"></a></p>
 					<ul>
-						<li>Integrado en Drupal 8</li>
+						<li>Integrado por defecto en Drupal 8</li>
+						<li><a href="https://www.drupal.org/project/modernizr">Módulo contrib</a></li>
+					</ul>
+				</section>
+				<section data-state="inside-dungeons">
+					<h3>Modernizr</h3>
+					<h4>Drupal 7</h4>
+					<ul>
+						<li><a href="https://www.drupal.org/project/modernizr">Módulo contrib</a></li>
+						<li>Descargar JavaScript configurado desde modernizr.com y cargarlo mediante .info del theme</li>
 					</ul>
 				</section>
 				<section data-state="inside-dungeons">
 					<h3>Modernizr</h3>
 					<p><img src="img/flex-screenshot.png" style="width:100%;"></p>
 				</section>
+				<section data-state="inside-dungeons dungeons">
+					<h3>Afrontar compatibilidad Navegadores no fancy</h3>
+					<h4>Ejemplo modernizr</h4>
+CSS
+<pre><code class="css" data-trim contenteditable style="font-size: 28px; line-height: 1.5em;">
+.no-flexbox .contenedor { display: block; }
+.flexbox .box { display: flex; }
+</code></pre>
+JS
+<pre><code class="javascript" data-trim contenteditable style="font-size: 28px; line-height: 1.5em;">
+if (Modernizr.flexbox) {
+  // supported
+} else {
+  // not-supported
+}
+</code></pre>
+				</section>
+				<section data-state="inside-dungeons">
+					<h2>Uso en Drupal 7</h2>
+					<h3>Theme base <a href="https://www.drupal.org/project/zen">Zen</a></h3>
+					<ul>
+						<li>Versión 7.x-6.0-beta1</li>
+						<li>Incluye autoprefix</li>
+					</ul>
+				</section>
+				<section data-state="sunny">
+					<h2>Aprender jugando</h2>
+					<ul>
+						<li><a href="http://flexboxfroggy.com/">Ranitas</a></li>
+						<li><a href="http://www.flexboxdefense.com/">Tanques</a></li>
+					</ul>
+				</section>
+				<section data-state="sunny">
+					<h2>Recursos</h2>
+					<ul>
+						<li><a href="https://github.com/philipwalton/flexbugs">Flexbugs</a></li>
+						<li><a href="https://chriswrightdesign.com/experiments/using-flexbox-today/">Flexbox today</a></li>
+						<li><a href="https://philipwalton.github.io/solved-by-flexbox/">Problemas resueltos</a></li>
+					</ul>
+				</section>
 
-      	<section data-state="end">
+      	<section data-state="end dungeons">
       		<h2>That's all folks</h2>
       		<h3>¿Preguntas?</h3>
       		<p><i class="fa fa-envelope-o"></i>
